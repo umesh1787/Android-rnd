@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.carappnew"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8" />
+
+     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+     <uses-feature android:name="android.hardware.camera"/>
+        <uses-feature android:name="android.hardware.camera.autofocus"/>
+        <uses-permission android:name="android.permission.CAMERA"/>
+        <uses-permission android:name="android.permission.VIBRATE"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+         
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+          <!--  android:name="com.carapp.secondphase.splashActivity" -->
+        <activity
+           android:name="com.carapp.activity.Login"
+             android:screenOrientation="portrait"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+       
+        <activity android:name="CaptureSignature"></activity>
+        <activity android:name="ChoosColor" android:theme="@android:style/Theme.Dialog"></activity>
+       
+        <activity android:name="com.carapp.activity.CheckDate" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.carapp.activity.CheckDay" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.carapp.activity.LicenseCheck" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.carapp.activity.NewJob" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.carapp.activity.CustResonForVisitList" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity>
+    <activity android:name="com.carapp.activity.ThirdScreen" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity> 
+        <activity android:name="com.carapp.activity.Firstscreen" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity>
+        <activity android:name="com.carapp.activity.MainActivity" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity>
+     <!--   <activity android:name="com.carapp.activity.Login" android:theme="@android:style/Theme.NoTitleBar" android:screenOrientation="portrait" ></activity> -->
+    </application>
+
+</manifest>
