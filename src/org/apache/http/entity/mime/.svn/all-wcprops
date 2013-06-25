@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime
+END
+MultipartEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/MultipartEntity.java
+END
+package.html
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/package.html
+END
+HttpMultipart.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipart.java
+END
+HttpMultipartMode.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/HttpMultipartMode.java
+END
+MIME.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/MIME.java
+END
+FormBodyPart.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/FormBodyPart.java
+END
+Header.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/Header.java
+END
+MinimalField.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/asf/!svn/ver/1470906/httpcomponents/httpclient/tags/4.2.5/httpmime/src/main/java/org/apache/http/entity/mime/MinimalField.java
+END

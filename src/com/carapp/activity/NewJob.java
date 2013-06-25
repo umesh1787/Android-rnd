@@ -31,6 +31,7 @@ import android.widget.ListView;
 
 import com.carapp.server.AsyncWebServiceProcessingTask;
 import com.carapp.util.PdfInfo;
+import com.carapp.util.UploadDataInfo;
 import com.example.carappnew.R;
 
 public class NewJob extends Activity{
@@ -76,19 +77,7 @@ ArrayList<String> text_sort = new ArrayList<String>();
 				
 			}
 		});
-		listView=(ListView)findViewById(R.id.listView);
-		 MultipartEntity entity=new MultipartEntity();
-		 try {
-			entity.addPart("action", new StringBody("getlist_reg_plate_no"));
 		
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		new AsyncWebServiceProcessingTask(context, handler1, entity, "Getting List of registration Plate…").execute(PdfInfo.newjobcard);
-
-		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this,R.layout.simplerow, text);
-			    listView.setAdapter(listAdapter);
 		handler = new Handler() { 
 		     @Override public void handleMessage(Message msg) { 
 		      String s=(String)msg.obj;
@@ -127,6 +116,22 @@ ArrayList<String> text_sort = new ArrayList<String>();
 			     
 			    }
 			  };
+		
+		
+		listView=(ListView)findViewById(R.id.listView);
+		 MultipartEntity entity=new MultipartEntity();
+		 try {
+			entity.addPart("action", new StringBody("getlist_reg_plate_no"));
+		
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		new AsyncWebServiceProcessingTask(context, handler1, entity, "Getting List of registration Plateï¿½").execute(PdfInfo.newjobcard);
+
+		ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this,R.layout.simplerow, text);
+			    listView.setAdapter(listAdapter);
+	
 		
 	}
 	private void shortList()
@@ -180,7 +185,7 @@ if(CarNoPlate.length()>0){
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-	new AsyncWebServiceProcessingTask(context, handler, entity, "Checking if entry already exists…").execute(PdfInfo.newjobcard);
+	new AsyncWebServiceProcessingTask(context, handler, entity, "Checking if entry already existsï¿½").execute(PdfInfo.newjobcard);
 
 }else {
 blink(carnoplate);
@@ -214,7 +219,7 @@ public void checkOut(View v) {
 					}
 
 				})
-			.setNegativeButton("This is the car’s first time at this shop.", new DialogInterface.OnClickListener() {
+			.setNegativeButton("This is the carï¿½s first time at this shop.", new DialogInterface.OnClickListener() {
 
 					public void onClick(DialogInterface dialog, int id) {
 						

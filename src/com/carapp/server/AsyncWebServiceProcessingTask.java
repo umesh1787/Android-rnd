@@ -20,6 +20,7 @@ import android.text.format.DateFormat;
 import android.util.Log;
 
 import com.carapp.util.UIUtils;
+import com.carapp.util.UploadDataInfo;
 
 
 public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , String>{
@@ -74,15 +75,16 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 		if (result.equals("no response")) {
 			UIUtils.showNetworkErrorMessage(context);
 		}else {
+			//UploadDataInfo.serverData=result;
 			Message msg=new Message();
 			msg.obj=result;
 			handler.sendMessage(msg);
 		}
-		long dtMili = System.currentTimeMillis();
+		/*long dtMili = System.currentTimeMillis();
 		   long time=((5*60)+3)*60*1000;
 		   long newlong=dtMili+time;
 		   String dateString= DateFormat.format("MM/dd/yyyy_hh:mm:ss", new Date(newlong)).toString();
-		    Log.e("time", ""+dateString);
+		    Log.e("time", ""+dateString);*/
 	}
 
 	@Override

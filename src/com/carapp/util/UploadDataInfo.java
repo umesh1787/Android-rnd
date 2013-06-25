@@ -27,4 +27,6 @@ public class UploadDataInfo {
 	public static ArrayList<String>   datacust_approved_work;
 	
 	public static String radiodata,Quotation1,Quotation2;
+	public static String serverData;
+	
 }
