@@ -39,7 +39,7 @@
             android:background="@drawable/edittext"
             android:ems="10"
             android:inputType="number"
-            android:maxLength="5"
+            android:maxLength="8"
             android:textColor="@color/mairoon" >
          
         </EditText>

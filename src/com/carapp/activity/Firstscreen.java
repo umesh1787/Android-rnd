@@ -53,7 +53,7 @@ public class Firstscreen extends Activity {
 		btnext.setOnClickListener(listener);
 		etBranch = (EditText) findViewById(R.id.branch);
 		etBranch.setText(PdfInfo.branch);
-		//etBranch.setText("br");
+		etBranch.setText("br");
 		etSaleperson = (EditText) findViewById(R.id.saleperson);
 		etSaleperson.setText(PdfInfo.name);
 		//etSaleperson.setText("sal");
