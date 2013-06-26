@@ -4,10 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -19,7 +15,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.carapp.util.PdfInfo;
@@ -58,30 +53,30 @@ public class Firstscreen extends Activity {
 		btnext.setOnClickListener(listener);
 		etBranch = (EditText) findViewById(R.id.branch);
 		etBranch.setText(PdfInfo.branch);
-		
+		//etBranch.setText("br");
 		etSaleperson = (EditText) findViewById(R.id.saleperson);
 		etSaleperson.setText(PdfInfo.name);
-		
+		//etSaleperson.setText("sal");
 		etCustomer = (EditText) findViewById(R.id.customer);
-	
+	//	etCustomer.setText("");
 		etCustomer.addTextChangedListener(textwatcher);
 		etContactNo = (EditText) findViewById(R.id.contactno);
-	
+	//	etContactNo.setText("");
 		etCustomer.addTextChangedListener(textwatcher);
 		etAddress = (EditText) findViewById(R.id.address);
-	
+	//	etAddress.setText("");
 		etAddress.addTextChangedListener(textwatcher);
 		etMake = (EditText) findViewById(R.id.make);
-
+	//	etMake.setText("");
 		etMake.addTextChangedListener(textwatcher);
 		etModel = (EditText) findViewById(R.id.model);
-	
+	//	etModel.setText("");
 		etModel.addTextChangedListener(textwatcher);
 		etYear = (EditText) findViewById(R.id.year);
-
+	//	etYear.setText("");
 		etYear.addTextChangedListener(textwatcher);
 		etOdometer = (EditText) findViewById(R.id.odometer);
-
+	//	etOdometer.setText("");
 		etOdometer.addTextChangedListener(textwatcher);
 		etRegistration = (EditText) findViewById(R.id.registration);
 		etRegistration.setText(i.getStringExtra("CarNoPlatefinal"));
@@ -97,40 +92,7 @@ public class Firstscreen extends Activity {
 		edittext=new EditText[]{etBranch, etSaleperson, etCustomer, etContactNo,
 				etAddress, etMake, etModel, etYear, etOdometer, etRegistration,
 				etDate, etTime};
-		if (i.getIntExtra("for", -1)==1) {
-			try {
-				
-			JSONObject jsonObject=new JSONObject(i.getStringExtra("response"));
-			
-		//	{"reg_id":"7","reg_plate_no":"HGJ","branch":"","salesperson":"","customer":"",
-		//	"contact number":"0","address":"","make":"","model":"","year":"0","odometer":"",
-		//	"date":"0000-00-00","time":"00:00:00"}	
-			
-			etBranch.setText(jsonObject.optString("branch"));
-			
-			etSaleperson.setText(jsonObject.optString("salesperson"));
-			etCustomer.setText(jsonObject.optString("customer"));
-			etContactNo.setText(jsonObject.optString("contact number"));
-			etAddress.setText(jsonObject.optString("address"));
-			etMake.setText(jsonObject.optString("make"));
-			etModel.setText(jsonObject.optString("model"));
-			etYear.setText(jsonObject.optString("year"));
-			etRegistration.setText(jsonObject.optString("reg_plate_no"));
-			
-			TextView tvDate=(TextView)findViewById(R.id.tv_date);
-			tvDate.setText("Job Exit Date");
-			etDate.setText(jsonObject.optString("date"));
-			TextView tvTime=(TextView)findViewById(R.id.tv_time);
-			tvTime.setText("Job Exit Time");
-			etTime.setText(jsonObject.optString("time"));
-			
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		
-			
-		}
 		
 		
 	}
