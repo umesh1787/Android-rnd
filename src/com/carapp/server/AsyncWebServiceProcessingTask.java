@@ -1,8 +1,6 @@
 package com.carapp.server;
 
 
-import java.util.Date;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -13,28 +11,26 @@ import org.apache.http.util.EntityUtils;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Message;
-import android.text.format.DateFormat;
 import android.util.Log;
 
 import com.carapp.util.UIUtils;
-import com.carapp.util.UploadDataInfo;
 
 
 public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , String>{
 	
 	private ProgressDialog bar; 
 	private Context context;
-	private Handler handler;
 	private MultipartEntity entity;
 	private String message;
+	private int key;
+	public static final String BROADCAST_ACTION = "com.websmithing.broadcasttest.displayevent";
 	
-	public AsyncWebServiceProcessingTask(Context context,Handler handler,MultipartEntity entity,String message){
+	public AsyncWebServiceProcessingTask(Context context,int key,MultipartEntity entity,String message){
 	
 		this.context=context;
-		this.handler=handler;
+		this.key=key;
 	    this.entity=entity;
 	    this.message=message;
 	}
@@ -43,7 +39,7 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 	protected String doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		 String responseData="no response";
-	
+	   
 		try {
 			HttpClient httpclient = new DefaultHttpClient();
 			HttpPost httppost = new HttpPost(params[0]);
@@ -71,20 +67,19 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 	protected void onPostExecute(String result) {
 		// TODO Auto-generated method stub
 		super.onPostExecute(result);
+		
 		bar.dismiss();
 		if (result.equals("no response")) {
 			UIUtils.showNetworkErrorMessage(context);
 		}else {
-			//UploadDataInfo.serverData=result;
-			Message msg=new Message();
-			msg.obj=result;
-			handler.sendMessage(msg);
+			
+			Intent intent = new Intent(BROADCAST_ACTION);
+			intent.putExtra("key",key);
+			intent.putExtra("response",result);
+			context.sendBroadcast(intent);
+		
 		}
-		/*long dtMili = System.currentTimeMillis();
-		   long time=((5*60)+3)*60*1000;
-		   long newlong=dtMili+time;
-		   String dateString= DateFormat.format("MM/dd/yyyy_hh:mm:ss", new Date(newlong)).toString();
-		    Log.e("time", ""+dateString);*/
+	
 	}
 
 	@Override
@@ -95,8 +90,6 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 	    bar.setMessage(message);
 	    bar.setCancelable(false);
 	    bar.show();
-	    long dtMili = System.currentTimeMillis();
-	    Log.e("time", ""+dtMili);
 	}
 
 }
