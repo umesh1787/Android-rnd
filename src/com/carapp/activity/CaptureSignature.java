@@ -41,7 +41,7 @@ public class CaptureSignature extends Activity {
     String title="SalePerson's Signature";
     String signaturepath;
     Intent intent;
- //hello
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub

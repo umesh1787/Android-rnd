@@ -77,7 +77,7 @@ public final class R {
         public static final int date=0x7f0a001e;
         public static final int deaer_recomendation=0x7f0a0026;
         public static final int email=0x7f0a0011;
-        public static final int imageView1=0x7f0a0046;
+        public static final int imageView1=0x7f0a0045;
         public static final int image_cust=0x7f0a0032;
         public static final int image_sale=0x7f0a0034;
         public static final int linear_cust_approved_work=0x7f0a0028;
@@ -92,7 +92,7 @@ public final class R {
         public static final int login_b_login=0x7f0a0043;
         public static final int login_e_username=0x7f0a0042;
         public static final int make=0x7f0a0014;
-        public static final int menu_settings=0x7f0a0049;
+        public static final int menu_settings=0x7f0a0048;
         public static final int model=0x7f0a0016;
         public static final int mysignature=0x7f0a0002;
         public static final int odometer=0x7f0a001a;
@@ -105,16 +105,13 @@ public final class R {
         public static final int radioButton1=0x7f0a002c;
         public static final int radioGroup1=0x7f0a002e;
         public static final int registration=0x7f0a001c;
-        public static final int rowTextView=0x7f0a0045;
         public static final int saleperson=0x7f0a000b;
         public static final int saleperson_sig=0x7f0a0035;
         public static final int submit=0x7f0a0036;
-        public static final int text1=0x7f0a0048;
+        public static final int text1=0x7f0a0047;
         public static final int textView1=0x7f0a0007;
         public static final int textView10=0x7f0a0019;
         public static final int textView11=0x7f0a001b;
-        public static final int textView12=0x7f0a001d;
-        public static final int textView13=0x7f0a001f;
         public static final int textView2=0x7f0a0008;
         public static final int textView3=0x7f0a000a;
         public static final int textView4=0x7f0a000c;
@@ -126,8 +123,10 @@ public final class R {
         public static final int time=0x7f0a0020;
         public static final int title=0x7f0a0001;
         public static final int tv=0x7f0a003b;
+        public static final int tv_date=0x7f0a001d;
+        public static final int tv_time=0x7f0a001f;
         public static final int view2=0x7f0a002a;
-        public static final int webview=0x7f0a0047;
+        public static final int webview=0x7f0a0046;
         public static final int year=0x7f0a0018;
     }
     public static final class layout {
