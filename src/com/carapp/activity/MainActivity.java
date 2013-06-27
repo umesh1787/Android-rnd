@@ -2,6 +2,7 @@ package com.carapp.activity;
 
 import java.io.File;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,12 +11,14 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.carapp.util.PdfInfo;
 import com.carapp.util.UploadDataInfo;
 import com.example.carappnew.R;
 
+@SuppressLint("SetJavaScriptEnabled")
 public class MainActivity extends Activity {
 
 	WebView w;
@@ -53,16 +56,20 @@ public class MainActivity extends Activity {
 		webSettings.setBuiltInZoomControls(true);
 		webSettings.setJavaScriptEnabled(true);
 		
-		
-		
-		//setContentView(w);
-		
-	
-		//w.loadUrl("http://techsoftlabs.in/Client/carapp/carappnew.html");
 		 
-		w.loadUrl("file:///android_asset/car.html");
-		 JsInterface jsInterface = new JsInterface();
+		
+		
+		     JsInterface jsInterface = new JsInterface();
 	     	w.addJavascriptInterface(jsInterface, "android");
+	     	w.setWebViewClient(new WebViewClient() {
+
+	     	   public void onPageFinished(WebView view, String url) {
+	     		//  w.loadUrl("javascript:callFromActivity(\""+getPackageName()+"\")");
+	     		  //Toast.makeText(getApplicationContext(), "loded", 1).show();
+	     		   loadValueToPage();
+	     	    }
+	     	});	
+	     	w.loadUrl("file:///android_asset/car.html");
 	}
 
 	 private class JsInterface {
@@ -70,8 +77,8 @@ public class MainActivity extends Activity {
 		 String selectedcolor;
 		 public void choosColor() {
 			 Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
-			 w.loadUrl("javascript:callFromActivity");
 			
+		//	 myWebView.loadUrl("javascript:changeText(\"hgjhghgjgxcvzxvc\",\"hhhhhhhhhh\")");
 				
 			
 			
@@ -104,9 +111,7 @@ public class MainActivity extends Activity {
 		  public void setValueFromWabePage(
 				 String tyer_condition_lf,String  tyre_size_lf,String  tyre_depth_lfx,String  tyre_depth_lfy,String  brake_pad_lf,String  brake_disk_lf,String  shocker_lf,String  wheel_lf,String  physical_damage_lf,String  tyer_condition_lb,String  tyre_size_lb,String  tyre_depth_lbx,String  tyre_depth_lby,String  brake_pad_lb,String  brake_disk_lb,String  shocker_lb,String  wheel_lb,String  physical_damage_lb,String  tyer_condition_rf,String  tyre_size_rf,String  tyre_depth_rfx,String  tyre_depth_rfy,String  brake_pad_rf,String  brake_disk_rf,String  shocker_rf,String  wheel_rf,String  physical_damage_rf,String  tyer_condition_rb,String  tyre_size_rb,String  tyre_depth_rbx,String  tyre_depth_rby,String  brake_pad_rb,String  brake_disk_rb,String  shocker_rb,String  wheel_rb,String  physical_damage_rb,String  immoblizer_f,String  battery_f,String  physical_damage_f,String  spare_wheel_b,String  lock_nut_b,String  physical_damage_b)
 		  {
-			//  Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_LONG).show();
-			  Log.d("tttttttttttt", "setValueFromWabePage");
-			 Log.i("setValueFromWabePage", " reaching in android");
+		
 			  UploadDataInfo.tyer_condition_lf=tyer_condition_lf;    UploadDataInfo.tyre_size_lf= tyre_size_lf;    UploadDataInfo.tyre_depth_lfx= tyre_depth_lfx;
 			  UploadDataInfo.tyre_depth_lfy= tyre_depth_lfy;         UploadDataInfo.brake_pad_lf= brake_pad_lf;    UploadDataInfo.brake_disk_lf=brake_disk_lf;
 			  UploadDataInfo.shocker_lf=shocker_lf;                  UploadDataInfo.wheel_lf=wheel_lf;
@@ -143,6 +148,58 @@ public class MainActivity extends Activity {
 		       
 		}
 		 }
+	 
+	 private void loadValueToPage() {
+	
+		w.loadUrl("javascript:loadValueToPage(\""
+				+ UploadDataInfo.tyer_condition_lf + "\"," + "\""
+				+ UploadDataInfo.tyre_size_lf + "\",\""
+				+ UploadDataInfo.tyre_depth_lfx + "\"," + "\""
+				+ UploadDataInfo.tyre_depth_lfy + "\",\""
+				+ UploadDataInfo.brake_pad_lf + "\"," + "\""
+				+ UploadDataInfo.brake_disk_lf + "\",\""
+				+ UploadDataInfo.shocker_lf + "\"," + "\""
+				+ UploadDataInfo.wheel_lf + "\",\""
+				+ UploadDataInfo.physical_damage_lf + "\"," + "\""
+				+ UploadDataInfo.tyer_condition_lb + "\",\""
+				+ UploadDataInfo.tyre_size_lb + "\"," + "\""
+				+ UploadDataInfo.tyre_depth_lbx + "\",\""
+				+ UploadDataInfo.tyre_depth_lby + "\",\""
+				+ UploadDataInfo.brake_pad_lb + "\",\""
+				+ UploadDataInfo.brake_disk_lb + "\",\""
+				+ UploadDataInfo.shocker_lb + "\",\"" 
+				+ UploadDataInfo.wheel_lb+ "\",\""
+				+ UploadDataInfo.physical_damage_lb + "\",\""
+				+ UploadDataInfo.tyer_condition_rf + "\",\""
+				+ UploadDataInfo.tyre_size_rf + "\",\""
+				+ UploadDataInfo.tyre_depth_rfx + "\",\""
+				+ UploadDataInfo.tyre_depth_rfy + "\",\""
+				+ UploadDataInfo.brake_pad_rf + "\",\""
+				+ UploadDataInfo.brake_disk_rf + "\",\""
+				+ UploadDataInfo.shocker_rf + "\",\""
+				+ UploadDataInfo.wheel_rf+ "\",\"" 
+				+ UploadDataInfo.physical_damage_rf + "\",\""
+				+ UploadDataInfo.tyer_condition_rb + "\",\""
+				+ UploadDataInfo.tyre_size_rb + "\",\""
+				+ UploadDataInfo.tyre_depth_rbx + "\",\""
+				+ UploadDataInfo.tyre_depth_rby + "\",\""
+				+ UploadDataInfo.brake_pad_rb + "\",\""
+				+ UploadDataInfo.brake_disk_rb + "\",\""
+				+ UploadDataInfo.shocker_rb + "\",\"" 
+				+ UploadDataInfo.wheel_rb+ "\",\""
+				+ UploadDataInfo.physical_damage_rb + "\",\""
+				+ UploadDataInfo.immoblizer_f + "\",\""
+				+ UploadDataInfo.battery_f + "\",\""
+				+ UploadDataInfo.physical_damage_f + "\",\""
+				+ UploadDataInfo.spare_wheel_b + "\",\""
+				+ UploadDataInfo.lock_nut_b + "\",\""
+				+ UploadDataInfo.physical_damage_b + "\")");
+		 
+		 //android.setValueFromWabePage(tyer_condition_lf,tyre_size_lf,tyre_depth_lfx,tyre_depth_lfy,brake_pad_lf,brake_disk_lf,shocker_lf,wheel_lf,physical_damage_lf,tyer_condition_lb,tyre_size_lb,tyre_depth_lbx,tyre_depth_lby,brake_pad_lb,brake_disk_lb,shocker_lb,wheel_lb,physical_damage_lb,tyer_condition_rf,tyre_size_rf,tyre_depth_rfx,tyre_depth_rfy,brake_pad_rf,brake_disk_rf,shocker_rf,wheel_rf,physical_damage_rf,tyer_condition_rb,tyre_size_rb,tyre_depth_rbx,tyre_depth_rby,brake_pad_rb,brake_disk_rb,shocker_rb,wheel_rb,physical_damage_rb,immoblizer_f,battery_f,physical_damage_f,spare_wheel_b,lock_nut_b,physical_damage_b);
+
+	}
+	 
+	 
 	 @Override
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// TODO Auto-generated method stub

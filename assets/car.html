@@ -1,15 +1,6 @@
-<style>
-.kksir{ background:url(images/arrow_down_green1.png) #0033CC;
-        height:64px;
-		width:64px;
-		}
-.kksir:hover{background:#3399CC;}
-</style>
+
 <script language="javascript" type="text/javascript">
-function callFromActivity(){
-    alert("Hello! I am an alert box!");
-  
- }
+
 function callFromActivity1(){
   //  android.choosColor();
    
@@ -84,6 +75,60 @@ var physical_damage_b=document.forms["myform"]["physical_damage_b"].value;
 }
 
 
+function loadValueToPage(tyer_condition_lf,tyre_size_lf,tyre_depth_lfx,tyre_depth_lfy,brake_pad_lf,brake_disk_lf,shocker_lf,wheel_lf,physical_damage_lf,tyer_condition_lb,tyre_size_lb,tyre_depth_lbx,tyre_depth_lby,brake_pad_lb,brake_disk_lb,shocker_lb,wheel_lb,physical_damage_lb,tyer_condition_rf,tyre_size_rf,tyre_depth_rfx,tyre_depth_rfy,brake_pad_rf,brake_disk_rf,shocker_rf,wheel_rf,physical_damage_rf,tyer_condition_rb,tyre_size_rb,tyre_depth_rbx,tyre_depth_rby,brake_pad_rb,brake_disk_rb,shocker_rb,wheel_rb,physical_damage_rb,immoblizer_f,battery_f,physical_damage_f,spare_wheel_b,lock_nut_b,physical_damage_b)
+{
+var tyer_condition_lf=tyer_condition_lf;
+var tyre_size_lf=tyre_size_lf;
+var tyre_depth_lfx=tyre_depth_lfx;
+var tyre_depth_lfy=tyre_depth_lfy;
+var brake_pad_lf=brake_pad_lf;
+var brake_disk_lf=brake_disk_lf;
+var shocker_lf=shocker_lf;
+var wheel_lf=wheel_lf;
+var physical_damage_lf=physical_damage_lf;
+
+var tyer_condition_lb=tyer_condition_lb;
+var tyre_size_lb=tyre_size_lb;
+var tyre_depth_lbx=tyre_depth_lbx;
+var tyre_depth_lby=tyre_depth_lby;
+var brake_pad_lb=brake_pad_lb;
+var brake_disk_lb=brake_disk_lb;
+var shocker_lb=shocker_lb;
+var wheel_lb=wheel_lb;
+var physical_damage_lb=physical_damage_lb;
+
+var tyer_condition_rf=tyer_condition_rf;
+var tyre_size_rf=tyre_size_rf;
+var tyre_depth_rfx=tyre_depth_rfx;
+var tyre_depth_rfy=tyre_depth_rfy;
+var brake_pad_rf=brake_pad_rf;
+var brake_disk_rf=brake_disk_rf;
+var shocker_rf=shocker_rf;
+var wheel_rf=wheel_rf;
+var physical_damage_rf=physical_damage_rf;
+
+var tyer_condition_rb=tyer_condition_rb;
+var tyre_size_rb=tyre_size_rb;
+var tyre_depth_rbx=tyre_depth_rbx;
+var tyre_depth_rby=tyre_depth_rby;
+var brake_pad_rb=brake_pad_rb;
+var brake_disk_rb=brake_disk_rb;
+var shocker_rb=shocker_rb;
+var wheel_rb=wheel_rb;
+var physical_damage_rb=physical_damage_rb;
+
+var immoblizer_f=immoblizer_f;
+var battery_f=battery_f;
+var physical_damage_f=physical_damage_f;
+
+var spare_wheel_b=spare_wheel_b;
+var lock_nut_b=lock_nut_b;
+var physical_damage_b=physical_damage_b;
+
+ document.getElementById('test1').innerHTML = '<strong>'+tyer_condition_rb+'hgjjj'+tyer_condition_rb+'</strong>';
+}
+
+
 function takePicture_LF(){
 var picture="takePicture_LF.jpg";
  android.takePicture(picture);
@@ -114,7 +159,7 @@ function takePicture_B(){
 var picture="takePicture_B.jpg";
  android.takePicture(picture);
 }
-
+ 
 
 </script>
 
@@ -607,6 +652,8 @@ var picture="takePicture_B.jpg";
 	
 }
 </style>
+<h1 id="test1"></h1>
+
 <div id="popup_box">	<!-- OUR PopupBox DIV-->
 	
     <td rowspan="2" colspan="2">
