@@ -38,7 +38,7 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 	@Override
 	protected String doInBackground(String... params) {
 		// TODO Auto-generated method stub
-		 String responseData="no response";
+		 String responseData="";
 	   
 		try {
 			HttpClient httpclient = new DefaultHttpClient();
@@ -67,19 +67,8 @@ public class AsyncWebServiceProcessingTask extends AsyncTask<String,Void , Strin
 	protected void onPostExecute(String result) {
 		// TODO Auto-generated method stub
 		super.onPostExecute(result);
-		
 		bar.dismiss();
-		if (result.equals("no response")) {
-			UIUtils.showNetworkErrorMessage(context);
-		}else {
-			
-			Intent intent = new Intent(BROADCAST_ACTION);
-			intent.putExtra("key",key);
-			intent.putExtra("response",result);
-			context.sendBroadcast(intent);
 		
-		}
-	
 	}
 
 	@Override
