@@ -1,5 +1,7 @@
 package com.carapp.util;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -174,5 +176,27 @@ public class UIUtils {
 		
 		return html.toString();
 	}
+	
+	public static boolean checkJson(String result,Context context) {
+
+		if (result.equals("")) {
+			showNetworkErrorMessage(context);
+			return false;
+		} else {
+			JSONObject jsonObject;
+			try {
+				jsonObject = new JSONObject(result);
+				return true;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				showMessage(context, "Message", "Server not respond");
+				return false;
+				
+			}
+
+		}	
+	}
+	
 }
 

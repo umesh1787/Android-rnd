@@ -100,8 +100,8 @@ public class Firstscreen extends Activity {
 		if (i.getIntExtra("for", -1)==1) {
 			try {
 				
-			JSONObject jsonObject=new JSONObject(i.getStringExtra("response"));
-			
+			JSONObject jsonObject2=new JSONObject(i.getStringExtra("response"));
+			JSONObject jsonObject=jsonObject2.getJSONObject("registration");
 		//	{"reg_id":"7","reg_plate_no":"HGJ","branch":"","salesperson":"","customer":"",
 		//	"contact number":"0","address":"","make":"","model":"","year":"0","odometer":"",
 		//	"date":"0000-00-00","time":"00:00:00"}	

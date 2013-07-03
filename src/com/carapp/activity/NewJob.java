@@ -241,9 +241,7 @@ public class NewJob extends Activity {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (result.equals("")) {
-			UIUtils.showNetworkErrorMessage(context);
-		} else {
+		if (UIUtils.checkJson(result,context)) {
 			try {
 				JSONObject jsonObject = new JSONObject(result);
 				list = new ArrayList<String>();
@@ -280,42 +278,27 @@ public class NewJob extends Activity {
 			CarNoPlatefinal = carnoplate.getText().toString();
 			MultipartEntity entity = new MultipartEntity();
 			try {
-				entity.addPart("action", new StringBody("search_reg_plate_no"));
+				entity.addPart("action", new StringBody("edit_vc"));
 				entity.addPart("reg_plate_no", new StringBody(CarNoPlatefinal));
 				result = new AsyncWebServiceProcessingTask(context, checkRegNo,
 						entity, "Checking if entry already exists?").execute(
 						PdfInfo.newjobcard).get();
-
+                 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			if (result.equals("")) {
-				UIUtils.showNetworkErrorMessage(context);
-			} else {
-				JSONObject jsonObject;
-				try {
-					jsonObject = new JSONObject(result);
-					if (jsonObject.optString("error").equals("no record found")) {
-
-						ShowDialog();
-
-					} else {
-						Intent intent1 = new Intent(context, Firstscreen.class);
-						intent1.putExtra("response", result);
-						intent1.putExtra("for", 1);
-						startActivity(intent1);
-						overridePendingTransition(R.anim.slide_in_up,
-								R.anim.slide_out_up);
-						carnoplate.setText("");
-					}
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
+			if (UIUtils.checkJson(result,context)) {
+				
+				Intent intent1 = new Intent(context, Firstscreen.class);
+				intent1.putExtra("response", result);
+				intent1.putExtra("for", 1);
+				startActivity(intent1);
+				overridePendingTransition(R.anim.slide_in_up,
+						R.anim.slide_out_up);
+				carnoplate.setText("");
 			}
-
+			
 		} else {
 			blink(carnoplate);
 		}
