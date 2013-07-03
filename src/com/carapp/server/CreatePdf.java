@@ -8,6 +8,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 
+import org.apache.http.message.BasicNameValuePair;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,6 +18,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.carapp.util.PdfInfo;
+import com.carapp.util.UploadDataInfo;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -59,8 +62,10 @@ public class CreatePdf extends AsyncTask<String, Void, String>{
     
     subPara.add(new Paragraph("          Branch- "+UploadDataInfo.strBranch+
     		"\n          Salesperson- "+UploadDataInfo.strSaleperson+
+    		"\n          Company- "+UploadDataInfo.company+ 
     		"\n          Customer- "+UploadDataInfo.strCustomer+
     		"\n          Contact number- "+UploadDataInfo.strContactNo+
+    		"\n          Email- "+UploadDataInfo.email+
     		"\n          Address- "+UploadDataInfo.strAddress+
     		"\n          Make- "+UploadDataInfo.strMake+
     		"\n          Model- "+UploadDataInfo.strModel+
@@ -200,7 +205,26 @@ public class CreatePdf extends AsyncTask<String, Void, String>{
     subPara.add(new Paragraph("Radio Data "+UploadDataInfo.radiodata,smallBold)); 
    
    
+   //******************new data******************************
    
+	 
+    
+	
+	subPara.add(new Paragraph("Observations "+UploadDataInfo.observations,smallBold)); 
+	subPara.add(new Paragraph("Wheel Nuts Torqued "+UploadDataInfo.wheel_nuts_torqued,smallBold)); 
+	subPara.add(new Paragraph("Wheels Cleaned "+UploadDataInfo.wheels_cleaned,smallBold)); 
+	subPara.add(new Paragraph("Wheels Balanced "+UploadDataInfo.wheels_balanced,smallBold)); 
+	subPara.add(new Paragraph("Alignment Done "+UploadDataInfo.alignment_done,smallBold)); 
+	subPara.add(new Paragraph("Tyre Pressure Front "+UploadDataInfo.tyre_pressure_front,smallBold)); 
+	subPara.add(new Paragraph("Tyre Pressure Fack "+UploadDataInfo.tyre_pressure_back,smallBold)); 
+	subPara.add(new Paragraph("Tyres Polished "+UploadDataInfo.tyres_polished,smallBold)); 
+	subPara.add(new Paragraph("Lock Nut Returned "+UploadDataInfo.lock_nut_returned,smallBold)); 
+	subPara.add(new Paragraph("Car Tested By Salesperson "+UploadDataInfo.car_tested_by_salesperson,smallBold)); 
+	subPara.add(new Paragraph("Work Inspected By Salesperson "+UploadDataInfo.work_inspected_by_salesperson,smallBold)); 
+	subPara.add(new Paragraph("Work Approved By Salesperson "+UploadDataInfo.work_approved_by_salesperson,smallBold)); 
+	subPara.add(new Paragraph("Customer Satisfied "+UploadDataInfo.customer_satisfied,smallBold));  
+	
+	
   
     subPara.setAlignment(Element.ALIGN_CENTER);
     document.add(subPara);

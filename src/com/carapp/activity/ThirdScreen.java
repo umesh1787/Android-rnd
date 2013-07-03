@@ -25,9 +25,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.carapp.server.CreatePdf;
-import com.carapp.server.UploadDataInfo;
 import com.carapp.util.JobDataDetail;
 import com.carapp.util.PdfInfo;
+import com.carapp.util.UploadDataInfo;
 import com.example.carappnew.R;
 
 public class ThirdScreen extends Activity{

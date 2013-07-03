@@ -339,7 +339,7 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medium Text"
+                    android:text="Observations"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black" />
 
@@ -349,12 +349,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:lines="5"
                     android:inputType="textMultiLine" >
 
                     <requestFocus />
                 </EditText>
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Value-Added Services"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
 <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >

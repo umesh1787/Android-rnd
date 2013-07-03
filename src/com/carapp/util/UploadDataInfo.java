@@ -22,11 +22,29 @@ public class UploadDataInfo {
                  battery_f,            lock_nut_b,  
             physical_damage_f,    physical_damage_b;
 	 
-	public static ArrayList<String>  datacust_reson_for_visit;
-	public static ArrayList<String>   datadealer_recomendation;
-	public static ArrayList<String>   datacust_approved_work;
+	public static ArrayList<String>  datacust_reson_for_visit,datadealer_recomendation,
+	datacust_approved_work;
 	
 	public static String radiodata,Quotation1,Quotation2;
 	public static String serverData;
+
+	public static String company,email;                       
+	
+	public static String FF, FL,FM,FR,FSL,FSR,BSL,BSR,BL,BM,BR;
+	
+	public static String observations,wheel_nuts_torqued,wheels_cleaned,wheels_balanced,
+	alignment_done,tyre_pressure_front,tyre_pressure_back,tyres_polished,lock_nut_returned,
+	car_tested_by_salesperson,work_inspected_by_salesperson,work_approved_by_salesperson,
+	customer_satisfied;
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "UploadDataInfo []";
+	}
+
+	
 	
 }
