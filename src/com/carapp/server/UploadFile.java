@@ -28,7 +28,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.carapp.util.PdfInfo;
-import com.carapp.util.UploadDataInfo;
 
 public class UploadFile extends AsyncTask<String, Integer, String>{
 

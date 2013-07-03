@@ -22,8 +22,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.carapp.server.UploadDataInfo;
 import com.carapp.util.PdfInfo;
-import com.carapp.util.UploadDataInfo;
 import com.example.carappnew.R;
 
 public class Firstscreen extends Activity {

@@ -16,7 +16,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.carapp.util.PdfInfo;
-import com.carapp.util.UploadDataInfo;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;

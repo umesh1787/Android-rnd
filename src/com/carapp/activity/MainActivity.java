@@ -2,6 +2,8 @@ package com.carapp.activity;
 
 import java.io.File;
 
+import org.apache.http.message.BasicNameValuePair;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -14,8 +16,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.carapp.server.UploadDataInfo;
 import com.carapp.util.PdfInfo;
-import com.carapp.util.UploadDataInfo;
 import com.example.carappnew.R;
 
 @SuppressLint("SetJavaScriptEnabled")
@@ -109,7 +111,18 @@ public class MainActivity extends Activity {
 		
 		  }
 		  public void setValueFromWabePage(
-				 String tyer_condition_lf,String  tyre_size_lf,String  tyre_depth_lfx,String  tyre_depth_lfy,String  brake_pad_lf,String  brake_disk_lf,String  shocker_lf,String  wheel_lf,String  physical_damage_lf,String  tyer_condition_lb,String  tyre_size_lb,String  tyre_depth_lbx,String  tyre_depth_lby,String  brake_pad_lb,String  brake_disk_lb,String  shocker_lb,String  wheel_lb,String  physical_damage_lb,String  tyer_condition_rf,String  tyre_size_rf,String  tyre_depth_rfx,String  tyre_depth_rfy,String  brake_pad_rf,String  brake_disk_rf,String  shocker_rf,String  wheel_rf,String  physical_damage_rf,String  tyer_condition_rb,String  tyre_size_rb,String  tyre_depth_rbx,String  tyre_depth_rby,String  brake_pad_rb,String  brake_disk_rb,String  shocker_rb,String  wheel_rb,String  physical_damage_rb,String  immoblizer_f,String  battery_f,String  physical_damage_f,String  spare_wheel_b,String  lock_nut_b,String  physical_damage_b)
+				 String tyer_condition_lf,String  tyre_size_lf,String  tyre_depth_lfx,String  tyre_depth_lfy,
+				 String  brake_pad_lf,String  brake_disk_lf,String  shocker_lf,String  wheel_lf,
+				 String  physical_damage_lf,String  tyer_condition_lb,String  tyre_size_lb,String  tyre_depth_lbx,String  tyre_depth_lby,
+				 String  brake_pad_lb,String  brake_disk_lb,String  shocker_lb,String  wheel_lb,
+				 String  physical_damage_lb,String  tyer_condition_rf,String  tyre_size_rf,
+				 String  tyre_depth_rfx,String  tyre_depth_rfy,String  brake_pad_rf,String  brake_disk_rf,
+				 String  shocker_rf,String  wheel_rf,String  physical_damage_rf,String  tyer_condition_rb,
+				 String  tyre_size_rb,String  tyre_depth_rbx,String  tyre_depth_rby,String  brake_pad_rb,
+				 String  brake_disk_rb,String  shocker_rb,String  wheel_rb,String  physical_damage_rb,
+				 String  immoblizer_f,String  battery_f,String  physical_damage_f,String  spare_wheel_b,
+				 String  lock_nut_b,String  physical_damage_b,String  FF,String  FL,String  FR,String  FM,
+				 String  FSL,String  FSR,String  BSL,String  BSR,String  BL,String  BM,String  BR)
 		  {
 		
 			  UploadDataInfo.tyer_condition_lf=tyer_condition_lf;    UploadDataInfo.tyre_size_lf= tyre_size_lf;    UploadDataInfo.tyre_depth_lfx= tyre_depth_lfx;
@@ -136,6 +149,19 @@ public class MainActivity extends Activity {
 			  UploadDataInfo.immoblizer_f=immoblizer_f;              UploadDataInfo.battery_f=battery_f;           UploadDataInfo.physical_damage_f=physical_damage_f;
 			  UploadDataInfo.spare_wheel_b=spare_wheel_b;            UploadDataInfo.lock_nut_b=lock_nut_b;         UploadDataInfo.physical_damage_b=physical_damage_b;
 		     
+			    UploadDataInfo.FF=FF;
+				UploadDataInfo.FL=FL;
+				UploadDataInfo.FR=FR;
+				UploadDataInfo.FM=FM;
+				UploadDataInfo.FSL=FSL;
+			    UploadDataInfo.FSR=FSR;
+				UploadDataInfo.BSL=BSL;
+				UploadDataInfo.BSR=BSR;
+				UploadDataInfo.BL=BL;
+			    UploadDataInfo.BM=BM;
+				UploadDataInfo.BR=BR;
+			  
+			  
 		     
 	   if (tyer_condition_lf.equals("Tyre Condition")||tyre_size_lf.equals("")||tyre_depth_lfx.equals("Tyre Depth X")||tyre_depth_lfy.equals("Tyre Depth Y")||brake_pad_lf.equals("Brake Pads")||brake_disk_lf.equals("Brake Disks")||shocker_lf.equals("Shocks")||wheel_lf.equals("Wheels")||physical_damage_lf.equals("Physical Damage")||tyer_condition_lb.equals("Tyre Condition")||tyre_size_lb.equals("")||tyre_depth_lbx.equals("Tyre Depth X")||tyre_depth_lby.equals("Tyre Depth Y")||brake_pad_lb.equals("Brake Pads")||brake_disk_lb.equals("Brake Disks")||shocker_lb.equals("Shocks")||wheel_lb.equals("Wheels")||physical_damage_lb.equals("Physical Damage")||tyer_condition_rf.equals("Tyre Condition")||tyre_size_rf.equals("")||tyre_depth_rfx.equals("Tyre Depth X")||tyre_depth_rfy.equals("Tyre Depth Y")||brake_pad_rf.equals("Brake Pads")||brake_disk_rf.equals("Brake Disks")||shocker_rf.equals("Shocks")||wheel_rf.equals("Wheels")||physical_damage_rf.equals("Physical Damage")||tyer_condition_rb.equals("Tyre Condition")||tyre_size_rb.equals("")||tyre_depth_rbx.equals("Tyre Depth X")||tyre_depth_rby.equals("Tyre Depth Y")||brake_pad_rb.equals("Brake Pads")||brake_disk_rb.equals("Brake Disks")||shocker_rb.equals("Shocks")||wheel_rb.equals("Wheels")||physical_damage_rb.equals("Physical Damage")||immoblizer_f.equals("Immobilizer")||battery_f.equals("Battery")||physical_damage_f.equals("Physical Damage")||spare_wheel_b.equals("Spare Wheel")||lock_nut_b.equals("Lock Nut")||physical_damage_b.equals("Physical Damage")) {
 	    		Toast.makeText(getApplicationContext(), "Enter All Fields", Toast.LENGTH_LONG).show();

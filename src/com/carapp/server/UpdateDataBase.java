@@ -13,7 +13,6 @@ import android.util.Log;
 
 import com.carapp.util.HTTPUtils;
 import com.carapp.util.PdfInfo;
-import com.carapp.util.UploadDataInfo;
 
 public class UpdateDataBase extends AsyncTask<String, Integer, String>{
 
@@ -146,6 +145,19 @@ public class UpdateDataBase extends AsyncTask<String, Integer, String>{
 		}
 		
 		paramList.add(new BasicNameValuePair("radiodata",UploadDataInfo.radiodata));
+		
+		paramList.add(new BasicNameValuePair("FF",UploadDataInfo.FF));
+		paramList.add(new BasicNameValuePair("FL",UploadDataInfo.FL));
+		paramList.add(new BasicNameValuePair("FR",UploadDataInfo.FR));
+		paramList.add(new BasicNameValuePair("FM",UploadDataInfo.FM));
+		paramList.add(new BasicNameValuePair("FSL",UploadDataInfo.FSL));
+	    paramList.add(new BasicNameValuePair("FSR",UploadDataInfo.FSR));
+		paramList.add(new BasicNameValuePair("BSL",UploadDataInfo.BSL));
+		paramList.add(new BasicNameValuePair("BSR",UploadDataInfo.BSR));
+		paramList.add(new BasicNameValuePair("BL",UploadDataInfo.BL));
+		paramList.add(new BasicNameValuePair("BM",UploadDataInfo.BM));
+		paramList.add(new BasicNameValuePair("BR",UploadDataInfo.BR));
+		
 		
 		String response = HTTPUtils.executeHttpGet(paramList,"http://techsoftlabs.com/taskdev/carapp/mobile_webservices/mobile_webservice.php");
 	
